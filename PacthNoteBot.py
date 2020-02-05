@@ -8,6 +8,12 @@ client = discord.Client()
 now = datetime.datetime.now()
 nowDate = now.strftime('%Y-%m-%d')
 
+@client.command(aliases=['search', 'g'])
+async def on_message(message):
+    if message.content.startswith('!구글검색'):
+        search_q = search.replace(' ', '%20')
+        await ctx.send("https://www.google.com/search?q=" + search_q)
+
 @client.event
 async def on_ready():
     print('Bot start')
