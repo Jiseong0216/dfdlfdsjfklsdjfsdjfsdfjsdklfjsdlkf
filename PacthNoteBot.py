@@ -11,7 +11,7 @@ nowDate = now.strftime('%Y-%m-%d')
 @client.event
 async def on_ready():
     print('Bot start')
-    game = discord.Game("!도움 | " + nowDate + " 일")
+    game = discord.Game("봇 문의는 Unknown_- | 지성#5554 로 부탁드립니다.")
     await client.change_presence(status=discord.Status.online, activity=game)
 
 @client.event
@@ -25,7 +25,7 @@ async def on_message(message):
         
     if message.content.startswith('.공지'):
         embed = discord.Embed(color=0x555555)
-        embed.add_field(name="공지", value="[공지가 없습니다.]", inline=False)
+        embed.add_field(name="공지", value="봇 이름이 변경 돼었습니다. [ Vincent ]", inline=False)
         await message.channel.send(embed=embed)
 
     if message.content.startswith('!봇에탄생'):
