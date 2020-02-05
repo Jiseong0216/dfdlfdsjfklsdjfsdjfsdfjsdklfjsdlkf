@@ -1,10 +1,9 @@
 import discord
 import datetime
 import asyncio
+import os
 
 client = discord.Client()
-
-TOKEN = 'Njc0MTk3OTY3MDI4MzU1MDgy.XjovIA.DP1Av7dwPlwVRl4_Edv37JkNssI'
 
 now = datetime.datetime.now()
 nowDate = now.strftime('%Y-%m-%d')
@@ -33,5 +32,6 @@ async def on_message(message):
         embed = discord.Embed(color=0x555555)
         embed.add_field(name="봇탄생", value="안녕? 나는 2020년 2월 4일에 지성이가 원래 봇이 죽었다고 급하게 내가 만들어졌어!", inline=False)
         await message.channel.send(embed=embed)
-        
-client.run(TOKEN)
+      
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
